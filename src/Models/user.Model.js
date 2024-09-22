@@ -20,6 +20,9 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
     },
     
+    profile:{
+        type:String
+    }
 });
 
 export const User = mongoose.model('User', userSchema);
