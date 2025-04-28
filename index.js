@@ -16,6 +16,7 @@ connecDB();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(userRouter);
+app.use('/uploads', express.static('uploads'));
 
 app.listen(port,()=>{
     console.log("server started at 8080");

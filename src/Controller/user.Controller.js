@@ -4,9 +4,7 @@ import { ApiError } from "../utils/ApiError.js";
 const Register = async (req, res) => {
     console.log("register called");
     try {
-        console.log(req.body);
-        const user = await CreateUser(req.body);  
-        console.log(user);
+        const user = await CreateUser({...req.body,profile:req.file.path});  
         res.status(200).json({
             message: "User successfully created",
             data: user

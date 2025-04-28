@@ -1,9 +1,9 @@
 import multer from "multer";
 import path from "path";
 
-multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function (req, file, next) {
-      next(null, '/uploads')
+      next(null, 'uploads/')
     },
     filename: (req, file, next) => {
         next(null, `${Date.now()}${path.extname(file.originalname)}`);
