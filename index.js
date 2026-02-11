@@ -18,6 +18,9 @@ app.use(bodyParser.json());
 app.use(userRouter);
 app.use("/uploads", express.static("uploads"));
 
+app.get("/health", (req, res) => {
+  res.send("server is running fine");
+});
 app.listen(port, () => {
   console.log("server started at 8080");
 });
